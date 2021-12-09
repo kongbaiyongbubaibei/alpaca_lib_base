@@ -155,7 +155,6 @@ dependencies {
     //播放亲
 
     //适配器
-    api 'com.dreamliner.lib:RvHelper:2.3.2'
     api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     api 'com.github.rubensousa:gravitysnaphelper-compat:2.0'
     api 'com.lqr.audio:library:1.0.0'
@@ -181,7 +180,7 @@ dependencies {
     //AutoSize
     api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
 
-    api 'com.github.kongbaiyongbubaibei:mayaoplayer:1.2'
+    api files('libs/gsyVideoPlayer.aar')
 
     //文件下载
     api 'com.liulishuo.filedownloader:library:1.7.6'
