@@ -193,7 +193,7 @@ dependencies {
     api 'me.codeboy.android:align-text-view:2.3.2'
 
     //BaseRecyclerViewAdapterHelper
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 
 
     //声波动画

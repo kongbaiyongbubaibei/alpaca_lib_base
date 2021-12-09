@@ -1,4 +1,4 @@
-package com.andjdk.library_base.utils
+package com.alpaca.library_base.utils
 
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -20,9 +20,9 @@ class LoadMoreHelp {
     fun init(recyclerView: RecyclerView?, mAdapter: BaseQuickAdapter<*, *>?, mOnRequest: (() -> Unit)?) {
         this.mAdapter = mAdapter
         if (mOnRequest != null) {
-            mAdapter?.setOnLoadMoreListener({
+            mAdapter?.loadMoreModule?.setOnLoadMoreListener {
                 mOnRequest()
-            }, recyclerView)
+            }
         }
     }
 
@@ -52,28 +52,29 @@ class LoadMoreHelp {
 
     private fun onRequestSucc(dataSize: Int) {
         this.dataSize = dataSize
-        mAdapter?.setEnableLoadMore(true)
+        mAdapter?.loadMoreModule?.loadMoreEnd(true)
 
         if (dataSize < pageSize) {
             if (pageIndex == 1) {
-                mAdapter?.loadMoreEnd(true)
+                mAdapter?.loadMoreModule?.loadMoreEnd(true)
             } else {
-                mAdapter?.loadMoreEnd()
+                mAdapter?.loadMoreModule?.loadMoreEnd(false)
             }
         } else {
-            mAdapter?.loadMoreComplete()
+            mAdapter?.loadMoreModule?.loadMoreComplete()
         }
         pageIndex += 1
     }
 
     fun onRequestFaild() {
-        mAdapter?.setEnableLoadMore(true)
-        mAdapter?.loadMoreFail()
+        mAdapter?.loadMoreModule?.loadMoreEnd(true)
+
+        mAdapter?.loadMoreModule?.loadMoreFail()
     }
 
     fun onRefresh(mOnRequest: (() -> Unit)?) {
         pageIndex = 1
-        mAdapter?.setEnableLoadMore(false)
+        mAdapter?.loadMoreModule?.loadMoreEnd(false)
         if (mOnRequest != null) {
             mOnRequest()
         }
