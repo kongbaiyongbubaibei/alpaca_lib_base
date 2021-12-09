@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.kongbaiyongbubaibei'
 
 
 android {
@@ -19,21 +21,11 @@ android {
                 includeCompileClasspath = true
             }
         }
-        buildConfigField "boolean", "ENABLE_SHARE", "true"
-        buildConfigField "boolean", "IS_MAJIABAO", "false"
-        buildConfigField "boolean", "MEIZU", "false"
-        buildConfigField "boolean", "YINGYONGBAO", "false"
-        buildConfigField "boolean", "INTERNATIONAL", "false"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
-        /*
-               exclude 'META-INF/NOTICE'
-               exclude 'META-INF/LICENSE'
-               exclude 'META-INF/LICENSE.txt'
-               exclude 'META-INF/NOTICE.txt'*/
     }
 
     buildTypes {
@@ -48,7 +40,7 @@ android {
         }
 
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             ndk {
                 //设置支持的SO库架构
