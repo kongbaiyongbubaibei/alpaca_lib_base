@@ -232,11 +232,6 @@ public class ShowPopWinowUtil {
         if (BaseApplication.is_Google) {
             net.setVisibility(View.GONE);
         }
-        if (MajiaUtils.isMajiabao()) {
-            qq.setVisibility(View.GONE);
-            circle.setVisibility(View.GONE);
-            wechat.setVisibility(View.GONE);
-        }
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -338,11 +333,6 @@ public class ShowPopWinowUtil {
 
         if (BaseApplication.is_Google) {
             net.setVisibility(View.GONE);
-        }
-        if (MajiaUtils.isMajiabao()) {
-            qq.setVisibility(View.GONE);
-            circle.setVisibility(View.GONE);
-            wechat.setVisibility(View.GONE);
         }
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
