@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <top.limuyang2.shadowlayoutlib.ShadowRelativeLayout
+        android:layout_width="255dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="124dp"
+        android:background="#ffffff"
+        app:l_radius="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_close_0515"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_num1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="15dp"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:text="1"
+                android:layout_marginTop="2dp"
+                android:textColor="#80f0392b"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                />
+
+            <TextView
+                android:id="@+id/tv_intro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_toRightOf="@id/tv_num1"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="5dp"
+                android:text="老师开播前，APP内会有提醒；"
+                android:textColor="#151c29"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_num2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_intro1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:text="2"
+                android:textColor="#80f0392b"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                />
+
+            <TextView
+                android:id="@+id/tv_intro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_intro1"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:layout_toRightOf="@id/tv_num2"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="5dp"
+                android:text="小助手给您发短信和消息推送提醒您上课；"
+                android:textColor="#151c29"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_num3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_intro2"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:text="3"
+                android:textColor="#80f0392b"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                />
+
+            <TextView
+                android:id="@+id/tv_intro3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_intro2"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:layout_toRightOf="@id/tv_num3"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="5dp"
+                android:text="也可向老师获取直播链接在电脑上观看。"
+                android:textColor="#151c29"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_online_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="5dp"
+            android:paddingBottom="15dp"
+            android:text="您预约的公开课“PTE萌新指导”正在开播，可在APP内点击"
+            android:textColor="#151c29"
+            android:textSize="14sp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_dialog_commit"
+            android:layout_width="141dp"
+            android:layout_height="31dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_dialog_order_commit"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="联系老师"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+    </top.limuyang2.shadowlayoutlib.ShadowRelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_cl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bg_windows_0515"
+        />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_cl1"
+        android:layout_centerHorizontal="true"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_bar_0520"
+            />
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:includeFontPadding="false"
+            android:text="预约成功"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
+    </FrameLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="hierarchy"></item>
+    <item type="id" name="isexpand"></item>
+
+    <!--  粘性頭部控件的id  -->
+    <item name="sticky_top_view_id" type="id" />
+    <item name="sticky_nav_view_id" type="id" />
+    <item name="sticky_scroll_view_id" type="id" />
+
+    <item name="statusbarutil_fake_status_bar_view" type="id" />
+    <item name="statusbarutil_translucent_view" type="id" />
+
+    <item name="nested_recycler_view_inner_recycler_listener" type="id"/>
+
+
+    <item name="jz_fullscreen_id" type="id" />
+    <item name="jz_tiny_id" type="id" />
+</resources>

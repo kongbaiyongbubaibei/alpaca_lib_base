@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColorHint">#999999</color>
+
+
+    <color name="color_white">#ffffff</color>
+
+    <color name="ic_default_bg_color">#33000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_33">#33000000</color>
+    <color name="line_gray">#e8e8e8</color>
+
+    <color name="bg_theme_color">#F0F7FE</color>
+    <color name="bg_receive_theme_color">#FEA100</color>
+    <color name="bg_receive_select_color">#ff495e</color>
+
+    <color name="default_shadow_color">#2a000000</color>
+    <color name="default_shadowback_color">#fff</color>
+    <color name="default_textColor">#000</color>
+
+</resources>

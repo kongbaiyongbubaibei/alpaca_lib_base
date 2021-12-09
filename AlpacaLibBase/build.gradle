@@ -1,0 +1,251 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                includeCompileClasspath = true
+            }
+        }
+        buildConfigField "boolean", "ENABLE_SHARE", "true"
+        buildConfigField "boolean", "IS_MAJIABAO", "false"
+        buildConfigField "boolean", "MEIZU", "false"
+        buildConfigField "boolean", "YINGYONGBAO", "false"
+        buildConfigField "boolean", "INTERNATIONAL", "false"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        /*
+               exclude 'META-INF/NOTICE'
+               exclude 'META-INF/LICENSE'
+               exclude 'META-INF/LICENSE.txt'
+               exclude 'META-INF/NOTICE.txt'*/
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk {
+                //设置支持的SO库架构
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk {
+                //设置支持的SO库架构
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libijkplayer.so'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //阿里路由框架
+    api 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    //noinspection GradleCompatible
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api 'androidx.annotation:annotation:1.1.0'
+
+    //kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //noinspection GradleCompatible
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.appcompat:appcompat:1.3.0-alpha01'
+
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+
+    //模块依赖------------------------------------------------------------------------------------
+
+    //第三方框架----------------------------------------------------------------------------------
+
+    //butterknife
+    api 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    // glide
+    api 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    // retrofit
+    api 'com.squareup.retrofit2:retrofit:2.6.2'
+    api 'com.squareup.retrofit2:converter-gson:2.6.2'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    //rxjava rxandroid
+    api 'io.reactivex.rxjava2:rxjava:2.2.14'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'com.rxjava.rxlife:rxlife-x:1.1.0'
+    api 'com.google.code.gson:gson:2.8.6'
+    api 'org.greenrobot:eventbus:3.1.1'
+
+    //阴影圆角布局
+    api 'com.github.limuyang2:LShadowLayout:1.0.3'
+
+    //特殊处理图片适配器
+    api 'com.makeramen:roundedimageview:2.3.0'
+    api 'com.dasu.image:blur:0.0.6'
+    api 'com.zhy:base-rvadapter:3.0.3'
+
+    //浮动状态栏
+    api 'com.github.rubensousa:floatingtoolbar:1.5.1'
+
+    //加载框
+    api 'com.victor:lib:1.0.4'
+
+    //微信
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.3.1'
+
+    api 'com.airbnb.android:lottie:3.4.0'
+
+    //qq分享
+
+    //    api files('libs/open_sdk_r6137_lite.jar')
+    api files('libs/open_sdk_r44f141d_lite.jar')
+
+    //友盟基础库相关依赖（必须）
+    api 'com.umeng.umsdk:common:9.3.8'
+    api 'com.umeng.umsdk:asms:1.2.2'
+    api 'com.umeng.umsdk:utdid:1.5.2.1'
+
+    //友盟Push相关依赖（必须）
+    api 'com.umeng.umsdk:push:6.3.3'
+    api 'com.umeng.umsdk:alicloud-httpdns:1.3.2.3'
+    api 'com.umeng.umsdk:alicloud-utils:2.0.0'
+    api 'com.umeng.umsdk:alicloud_beacon:1.0.5'
+
+    api 'com.umeng.umsdk:agoo-accs:3.4.2.7'
+    api 'com.umeng.umsdk:agoo_aranger:1.0.6'
+    api 'com.umeng.umsdk:agoo_networksdk:3.5.8'
+    api 'com.umeng.umsdk:agoo_tnet4android:3.1.14.10'
+
+
+    //拓展方法数
+    api 'androidx.multidex:multidex:2.0.1'
+
+    //播放亲
+
+    //适配器
+    api 'com.dreamliner.lib:RvHelper:2.3.2'
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    api 'com.github.rubensousa:gravitysnaphelper-compat:2.0'
+    api 'com.lqr.audio:library:1.0.0'
+
+    //环形图表
+    api 'com.github.bmarrdev:android-DecoView-charting:v1.2'
+
+    //Log信息拦截
+    api 'com.squareup.okhttp3:logging-interceptor:3.14.4'
+
+    //下拉刷新
+    api 'in.srain.cube:ultra-ptr:1.0.11'
+
+    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+    api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    api 'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
+
+    //图片选择器
+    api 'com.lzy.widget:imagepicker:0.6.1'
+
+    //图片裁剪
+    api 'cn.finalteam:galleryfinal:1.4.8.7'
+    //AutoSize
+    api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+
+    api 'com.github.kongbaiyongbubaibei:mayaoplayer:1.2'
+
+    //文件下载
+    api 'com.liulishuo.filedownloader:library:1.7.6'
+
+    //七牛云
+    api 'com.qiniu:qiniu-android-sdk:7.3.12'
+
+    //分散对齐
+    api 'me.codeboy.android:align-text-view:2.3.2'
+
+    //BaseRecyclerViewAdapterHelper
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+
+
+    //声波动画
+    api 'com.carlos.voiceline:mylibrary:1.0.6'
+
+    //loadingdialog
+    api 'com.github.gittjy:LoadingDialog:1.0.2'
+
+    //glide高斯模糊效果
+    api 'jp.wasabeef:glide-transformations:2.0.2'
+
+    //room数据库
+    api 'androidx.room:room-runtime:2.2.2'
+    annotationProcessor 'androidx.room:room-compiler:2.2.2'
+    api 'androidx.room:room-rxjava2:2.2.2'
+    androidTestImplementation 'androidx.room:room-testing:2.2.2'
+
+    //拼音转换
+    api 'com.github.open-android:pinyin4j:2.5.0'
+
+    //测评曲线
+    api 'com.google.guava:guava:28.2-android'
+
+    //仿ios弹性列表
+    api 'com.lzy.widget:view-core:0.2.3'
+
+    //toast
+    api 'com.facebook.rebound:rebound:0.3.8'
+
+    //图片压缩
+    api 'top.zibin:Luban:1.1.8'
+
+    //叠加头像
+    api 'com.github.hnsycsxhzcsh:DiscussionAvatarView:v1.3'
+
+    //毛玻璃
+    api 'com.github.mmin18:realtimeblurview:1.2.1'
+
+    //取色
+    api 'androidx.palette:palette-ktx:1.0.0'
+
+    //检测是否是模拟器
+    api 'com.lahm.library:easy-protector-release:1.1.2@aar'
+}
+repositories {
+    mavenCentral()
+}

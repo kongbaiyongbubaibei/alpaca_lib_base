@@ -1,0 +1,118 @@
+<resources>
+
+    <style name="transparentDialog" parent="TranslucentDialogStyle">
+        <item name="android:windowAnimationStyle">@style/DialogBottomSheetAnimation</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="TranslucentDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 自己想要的背景 -->
+        <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
+    </style>
+    <style name="DialogBottomSheetAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_sheet_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_sheet_out_anim</item>
+    </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- 设置没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 重点 -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="style_dialog_progress" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/popup_toast_anim</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="popup_toast_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+
+
+    <!-- 水平分割线的样式 -->
+    <style name="horizontal_line_style">
+        <item name="android:background">@color/line_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+    </style>
+
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
+
+    <declare-styleable name="ViewsFlipper">
+        <attr name="flipInterval" format="integer" />
+        <attr name="flipDuration" format="integer" />
+    </declare-styleable>
+
+    <!--带输入框的dialog 自动弹出输入框-->
+    <style name="BaseDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@android:color/transparent</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item><!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 自己想要的背景 -->
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+    </style>
+
+    <style name="BaseDialogStyle1" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 自己想要的背景 -->
+        <item name="android:backgroundDimEnabled">false</item><!-- 弹窗背景是否变暗 -->
+    </style>
+    <!-- 自定义loading dialog -->
+    <!--底部弹框-->
+
+    <!-- 黑色正常大小的文字 -->
+
+    <!-- 分割线 -->
+
+    <declare-styleable name="PayPwdView">
+        <attr name="count" format="integer" />
+        <attr name="border_color" format="color" />
+        <attr name="dot_color" format="color" />
+    </declare-styleable>
+
+
+    <!--键盘数字-->
+
+
+    <declare-styleable name="CustomEditTextView">
+        <attr name="edittext_max_number" format="integer" />
+        <attr name="edittext_hint_text" format="string" />
+        <attr name="edittext_color" format="color" />
+        <attr name="edittext_size" format="dimension" />
+        <attr name="edittext_hint_color" format="color" />
+        <attr name="lines_color" format="color" />
+        <attr name="textview_text_color" format="color" />
+        <attr name="textview_text_size" format="dimension" />
+
+    </declare-styleable>
+    <!--播放器进度条的styles-->
+    <style name="SeekBarAppTheme">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:focusable">true</item>
+        <item name="android:progressDrawable">@drawable/layout_video_progressbar</item>
+        <item name="android:thumb">@drawable/round_button_190805</item>
+        <item name="android:minHeight">2dip</item>
+        <item name="android:maxHeight">2dip</item>
+    </style>
+
+</resources>
