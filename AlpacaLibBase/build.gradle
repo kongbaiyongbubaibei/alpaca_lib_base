@@ -28,6 +28,12 @@ android {
         exclude 'META-INF/DEPENDENCIES'
     }
 
+    productFlavors {
+        videobase {
+
+        }
+    }
+
     buildTypes {
 
         debug {
@@ -180,7 +186,7 @@ dependencies {
     //AutoSize
     api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
 
-    api files('libs/gsyVideoPlayer.aar')
+    videobaseApi project(path: ':gsyVideoPlayer', configuration: 'default')
 
     //文件下载
     api 'com.liulishuo.filedownloader:library:1.7.6'
